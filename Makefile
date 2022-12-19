@@ -1,0 +1,13 @@
+POETRY = poetry run
+
+style:
+	$(POETRY) black -S -l 79 .
+	$(POETRY) isort .
+
+lint:
+	$(POETRY) flake8
+	$(POETRY) mypy .
+
+test:
+	$(POETRY) pytest -vv
+
